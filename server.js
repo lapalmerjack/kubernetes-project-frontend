@@ -1,6 +1,6 @@
 import express from 'express';
 const app = express();
-const port =  2345;
+const port =  5000;
 
 // Health endpoint
 app.get('/health', (req, res) => {
