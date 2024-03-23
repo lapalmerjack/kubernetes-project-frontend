@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseUrl = 'http://localhost:8081';
+const baseUrl = 'http://http://34.49.203.214';
 
 const createNote = async (newNote) => {
   try {
@@ -27,7 +27,7 @@ const getAllNotes = async () => {
 
 const getHealthCheck = async () => {
   try {
-    const response = await axios.get(`${baseUrl}`)
+    const response = await axios.get(`${baseUrl}/`)
     console.log(response.data)
     console.log('Health check passed')
   } catch (error) {
