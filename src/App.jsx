@@ -22,7 +22,9 @@ const App = () => {
   useEffect(() => {
     const getAllNotes = async () => {
         try {
+            const healthCheck = await noteService.getHealthCheck
             const data = await noteService.getAllNotes()
+            console.log(healthCheck)
             setNotes(data)
 
         } catch (error) {
