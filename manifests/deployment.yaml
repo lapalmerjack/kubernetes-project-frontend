@@ -18,11 +18,11 @@ spec:
           image: FRONTEND/IMAGE
           ports:
             - containerPort: 3000
-          livenessProbe:
+          readinessProbe:
             httpGet:
               path: /
-              port: 2345
-            initialDelaySeconds: 40
+              port: 3000
+            initialDelaySeconds: 60
             periodSeconds: 20
 
 
