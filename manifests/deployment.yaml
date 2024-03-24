@@ -15,16 +15,15 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: FRONTEND/IMAGE
+          image: YOUR_FRONTEND_IMAGE:TAG
           ports:
             - containerPort: 3000
           readinessProbe:
             httpGet:
-              path: /health
-              port: 2345
-            initialDelaySeconds: 60
-            periodSeconds: 20
-
+              path: /health  # Path to your frontend health check endpoint
+              port: 3000      # Port on which your frontend server is listening
+            initialDelaySeconds: 60  # Wait for 60 seconds before starting the probe
+            periodSeconds: 20  # Check the health status every 20 seconds
 
 ---
 
