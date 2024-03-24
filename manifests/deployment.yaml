@@ -1,7 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  namespace: kubernetes-project
   name: frontend
 spec:
   replicas: 1
@@ -31,7 +30,6 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  namespace: kubernetes-project
   name: frontend-service
 spec:
   type: NodePort
