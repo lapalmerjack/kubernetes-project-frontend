@@ -6,7 +6,6 @@ import Image from "./components/Image"
 
 const App = () => {
   const [notes, setNotes] = useState([])
-
   const styles = {
     container: {
       display: 'flex',
@@ -43,6 +42,12 @@ const App = () => {
       console.error("Error creating new note: ", error)
     }
   }
+
+  const toggleDoneOf = async (id)  => {
+    const updatednote = await noteService.isTaskDone(id)
+    setNotes(notes.map(n => n.id !== id ? n : updatednote))
+    console.log('toggling done')
+  }
  
 
   return (
@@ -50,7 +55,7 @@ const App = () => {
       <Image />
        <NoteForm createNote={createNote} styles={styles.form} />
        {notes.map(
-                note => <Note note={note} key={note.id} />
+                note => <Note note={note} key={note.id} toggleDone={toggleDoneOf(note.id)}/>
             )}
     </div>
   )

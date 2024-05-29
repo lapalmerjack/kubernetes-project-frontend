@@ -13,6 +13,17 @@ const createNote = async (newNote) => {
   }
 }
 
+const isTaskDone = async (id) => {
+  try {
+    const response = await axios.put(`${baseUrl}/isDone/${id}`, newNote);
+    return response.data;
+  } catch (error) {
+    // Handle error
+    console.error('Error creating new note:', error);
+    throw error; // Re-throw the error to let the calling code handle it
+  }
+}
+
 const getAllNotes = async () => {
   try {
     const response = await axios.get(`${baseUrl}/getToDos`);
@@ -36,4 +47,4 @@ const fetchImage = async () => {
     }
 }
 
-export default { createNote, getAllNotes, fetchImage };
+export default { createNote, getAllNotes, fetchImage, isTaskDone };
