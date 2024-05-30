@@ -24,9 +24,16 @@ const NoteForm = ({ createNote, styles }) => {
 
     const addNote = (event) => {
         event.preventDefault()
-        createNote({
-            note
-        })
+    
+        const noteObject = {
+            note: note,
+            is_done: false,
+        }
+        console.log(noteObject)
+        createNote(
+            noteObject
+
+        )
         setNote('')
     }
 

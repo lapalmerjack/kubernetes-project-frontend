@@ -1,9 +1,10 @@
 import axios from 'axios';
 
-const baseUrl = 'http://35.228.30.214';
+const baseUrl = 'http://34.36.28.22';
 
 const createNote = async (newNote) => {
   try {
+    console.log(newNote, "Is MY NOTE")
     const response = await axios.post(`${baseUrl}/add`, newNote);
     return response.data;
   } catch (error) {
@@ -15,11 +16,11 @@ const createNote = async (newNote) => {
 
 const isTaskDone = async (id) => {
   try {
-    const response = await axios.put(`${baseUrl}/isDone/${id}`, newNote);
+    const response = await axios.put(`${baseUrl}/isDone/${id}`);
     return response.data;
   } catch (error) {
     // Handle error
-    console.error('Error creating new note:', error);
+    console.error('Error changing done status:', error);
     throw error; // Re-throw the error to let the calling code handle it
   }
 }

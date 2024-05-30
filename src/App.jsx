@@ -55,7 +55,7 @@ const App = () => {
       <Image />
        <NoteForm createNote={createNote} styles={styles.form} />
        {notes.map(
-                note => <Note note={note} key={note.id} toggleDone={toggleDoneOf(note.id)}/>
+                note => <Note note={note} key={note.id} toggleDone={() => toggleDoneOf(note.id)}/>
             )}
     </div>
   )
