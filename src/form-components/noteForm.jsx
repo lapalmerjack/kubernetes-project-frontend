@@ -29,7 +29,7 @@ const NoteForm = ({ createNote, styles }) => {
             note: note,
             is_done: false,
         }
-        console.log(noteObject)
+        console.log(noteObject, 'The object to be created')
         createNote(
             noteObject
 
