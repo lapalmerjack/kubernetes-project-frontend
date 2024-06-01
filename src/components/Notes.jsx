@@ -4,7 +4,6 @@ import noteService from "../services/noteService"
 
 
 const Note = ({ note, toggleDone }) => {
-  console.log(note, "is my note")
 
   const label = note.is_done ? 'done' : 'not done'
   console.log(note)
