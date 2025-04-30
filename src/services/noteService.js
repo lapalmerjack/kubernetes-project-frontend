@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseUrl = 'http://34.36.7.40';
+const baseUrl = 'http:// 34.120.26.177';
 
 const createNote = async (newNote) => {
   try {
